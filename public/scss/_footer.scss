@@ -1,0 +1,17 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  padding: var(--pa1) 0;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-white);
+    flex: 1;
+  }
+}
