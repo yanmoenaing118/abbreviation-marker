@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Abbreviation Marker</title>
 </head>
 
@@ -18,6 +18,16 @@
                 </svg>
             </a>
             <h1>Add a new Abbreviation</h1>
+        </div>
+
+        <% } else if( page == "edit" ) { %>
+        <div class="header__new">
+            <a href="/" class="btn__back">
+                <svg class="footer__icon ">
+                    <use xlink:href="images/sprite.svg#icon-arrow-right"></use>
+                </svg>
+            </a>
+            <h1>Update the Abbreviation</h1>
         </div>
         <% } else { %>
 

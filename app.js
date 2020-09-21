@@ -1,10 +1,13 @@
 const path = require("path");
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 const abbreviationRouter = require("./routes/abbreviationRotes");
 const viewRouter = require("./routes/viewRoutes");
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, "public")));
 

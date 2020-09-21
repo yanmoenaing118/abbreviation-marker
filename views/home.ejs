@@ -3,10 +3,35 @@
 <section class="home">
     <% for(i = 0; i < abbrsList.length ; i++) {%>
     <div class="content_box">
-        <h2 class="content_box__title"><%= abbrsList[i].abbreviation %> (<%= abbrsList[i].stands_for %>)</h2>
-        <p class="content_box__text">
-            <%= abbrsList[i].description %>
-        </p>
+        <div class="content_box__box">
+            <h2 class="content_box__title"><%= abbrsList[i].abbreviation %> (<%= abbrsList[i].stands_for %>)</h2>
+            <p class="content_box__text">
+                <%= abbrsList[i].description %>
+            </p>
+
+        </div>
+
+        <div class="content_box__action">
+            <% const abbr = abbrsList[i] %>
+            <a href="/edit?a=<%=abbr.abbreviation%>&s=<%=abbr.stands_for%>&d=<%=abbr.description%>&id=<%=abbr._id%> "
+                class=" btn__action btn__action--update">
+                <svg>
+                    <use xlink:href="images/sprite.svg#icon-pencil"></use>
+                </svg>
+            </a>
+
+            <a href="/add/<%= abbrsList[i]._id %>" class=" btn__action btn__action--fav">
+                <svg>
+                    <use xlink:href="images/sprite.svg#icon-heart"></use>
+                </svg>
+            </a>
+            <a href="/delete/<%= abbrsList[i]._id %>" class="btn__action btn__action--delete">
+                <svg>
+                    <use xlink:href="images/sprite.svg#icon-bin"></use>
+                </svg>
+            </a>
+
+        </div>
     </div>
     <% } %>
 </section>

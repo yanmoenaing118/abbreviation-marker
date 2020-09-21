@@ -6,7 +6,8 @@
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  padding: var(--pa1) 0;
+  padding: calc(var(--pa1) + 0.5rem) 0;
+  box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.3);
 
   &__icon {
     width: 2.5rem;

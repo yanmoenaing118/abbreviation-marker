@@ -1,19 +1,54 @@
 .content_box {
+  text-decoration: none;
   background-color: var(--color-white);
   color: var(--color-black);
   padding: var(--pa2) var(--pa1);
   display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow--1);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: var(--mg2) 1.5rem;
+  border-radius: 15px;
+  color: #333;
+
+  &__box {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: var(--pa2);
+    padding-left: var(--pa1);
+  }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   &__text {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
     margin-top: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  &__action {
+    width: 2rem;
+    margin-left: auto;
+    margin-right: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    filter: drop-shadow(0, 10px, 5px rgba(0, 0, 0, 1));
+
+    svg {
+      fill: #777;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &--active {
+        fill: var(--primary-color);
+      }
+    }
+  }
+
+  &__more {
+    font-size: 1.2rem;
   }
 }

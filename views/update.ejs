@@ -1,0 +1,30 @@
+<%- include("header") -%>
+
+<div class="new">
+
+    <form action="/update/<%=abbr.id%>" method="POST" class="form">
+        <div class="form__group">
+            <label for="abbr" class="form__label">Abbreviation</label>
+            <input type="text" name="abbreviation" id="abbr" class="form__input" value="<%= abbr.a %>" />
+        </div>
+
+        <div class="form__group">
+            <label for="stands_for" class="form__label">Stands for</label>
+            <input type="text" name="stands_for" id="stands_for" class="form__input" value="<%= abbr.s %>" />
+        </div>
+
+        <div class="form__group--textarea">
+            <label class="form__label description_label" for="description">Enter the description for DNS</label>
+            <textarea rows="18" id="description" name="description" class="form__textarea"><%= abbr.d %></textarea>
+        </div>
+
+        <button class="btn btn--save form__submit">Save</button>
+
+    </form>
+
+</div>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

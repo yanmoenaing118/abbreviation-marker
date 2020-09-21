@@ -58,6 +58,7 @@ exports.createAbbreviation = async (req, res, next) => {
 };
 exports.updateAbbreviation = async (req, res, next) => {
   try {
+    console.log(req.body);
     const updatedAbbr = await Abbreviation.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -66,6 +67,9 @@ exports.updateAbbreviation = async (req, res, next) => {
         new: true,
       }
     );
+    if (req.url.startsWith("/update")) {
+      return res.redirect("/");
+    }
     res.status(200).json({
       status: "success",
       data: {
@@ -83,6 +87,10 @@ exports.updateAbbreviation = async (req, res, next) => {
 exports.deleteAbbreviation = async (req, res, next) => {
   try {
     await Abbreviation.findByIdAndDelete(req.params.id);
+
+    if (req.url.startsWith("/delete")) {
+      return res.redirect("/");
+    }
     res.status(204).json({
       status: "success",
       data: null,

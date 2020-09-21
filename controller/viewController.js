@@ -22,3 +22,11 @@ exports.getNewPage = (req, res) => {
     page: "new",
   });
 };
+
+exports.getEditPage = (req, res) => {
+  console.log(req.query);
+  res.render("update", {
+    page: "edit",
+    abbr: req.query,
+  });
+};

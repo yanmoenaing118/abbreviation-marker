@@ -26,13 +26,14 @@
     display: block;
     font-weight: 900;
     text-transform: capitalize;
+    color: #777777;
   }
 
   &__input {
     flex: 2;
     width: 100%;
     margin-left: var(--mg2);
-    border: 2px solid var(--primary-color);
+    border: 2px solid #aaaaaa;
     border-radius: 5px;
     padding: var(--pa1) 0.5rem;
     display: flex;
@@ -42,7 +43,8 @@
   }
 
   &__textarea {
-    border: 2px solid var(--primary-color);
+    border: 2px solid #aaaaaa;
+
     padding: var(--pa1) 0.5rem;
     resize: none;
     font-family: inherit;

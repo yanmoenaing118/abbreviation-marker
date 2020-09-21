@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #06878b;
+  --primary-color: #8f55e2;
   --color-black: #000;
   --color-white: #fff;
   --shadow--1: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -44,7 +44,11 @@ body {
   box-sizing: inherit;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
-  line-height: 1.6; }
+  line-height: 1.6;
+  background-image: url("../images/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
 
 .footer {
   position: fixed;
@@ -54,7 +58,8 @@ body {
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  padding: var(--pa1) 0; }
+  padding: calc(var(--pa1) + 0.5rem) 0;
+  box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.3); }
   .footer__icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -85,6 +90,10 @@ body {
 .new {
   padding: var(--pa2) 0; }
 
+.home {
+  padding-top: var(--pa1);
+  margin-bottom: var(--mg10); }
+
 .main {
   margin-top: 62px; }
 
@@ -94,19 +103,43 @@ body {
   padding-top: 0.7rem; }
 
 .content_box {
+  text-decoration: none;
   background-color: var(--color-white);
   color: var(--color-black);
   padding: var(--pa2) var(--pa1);
   display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow--1); }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: var(--mg2) 1.5rem;
+  border-radius: 15px;
+  color: #333; }
+  .content_box__box {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: var(--pa2);
+    padding-left: var(--pa1); }
   .content_box__title {
-    font-size: 1.8rem; }
+    font-size: 1.5rem; }
   .content_box__text {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    font-size: 1.3rem; }
+  .content_box__action {
+    width: 2rem;
+    margin-left: auto;
+    margin-right: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    filter: drop-shadow(0, 10px, 5px black); }
+    .content_box__action svg {
+      fill: #777;
+      width: 1.5rem;
+      height: 1.5rem; }
+      .content_box__action svg--active {
+        fill: var(--primary-color); }
+  .content_box__more {
+    font-size: 1.2rem; }
 
 .btn {
   text-transform: uppercase;
@@ -115,7 +148,7 @@ body {
   cursor: pointer; }
   .btn--save {
     width: 90%;
-    background-color: var(--primary-color);
+    background-color: #333333;
     color: var(--color-white);
     font-size: 2rem;
     font-weight: bold;
@@ -125,11 +158,18 @@ body {
     margin-top: 0.7rem; }
     .btn__back svg {
       transform: rotate(180deg); }
+  .btn__action {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    display: block; }
+    .btn__action:not(:last-child) {
+      margin-bottom: var(--mg2); }
 
 .newbtn {
   cursor: pointer;
   position: fixed;
-  bottom: 5.5rem;
+  bottom: 6.5rem;
   right: 1rem;
   width: 5rem;
   height: 5rem;
@@ -140,8 +180,8 @@ body {
   align-items: center;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); }
   .newbtn__plus {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     fill: #fff; }
 
 .form {
@@ -163,12 +203,13 @@ body {
     flex: 1;
     display: block;
     font-weight: 900;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    color: #777777; }
   .form__input {
     flex: 2;
     width: 100%;
     margin-left: var(--mg2);
-    border: 2px solid var(--primary-color);
+    border: 2px solid #aaaaaa;
     border-radius: 5px;
     padding: var(--pa1) 0.5rem;
     display: flex;
@@ -176,7 +217,7 @@ body {
     font-family: inherit;
     font-weight: inherit; }
   .form__textarea {
-    border: 2px solid var(--primary-color);
+    border: 2px solid #aaaaaa;
     padding: var(--pa1) 0.5rem;
     resize: none;
     font-family: inherit; }
