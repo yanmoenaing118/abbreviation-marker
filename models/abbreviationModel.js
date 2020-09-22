@@ -21,6 +21,11 @@ const abbreviationSchema = new mongoose.Schema(
       type: Date,
       default: new Date(),
     },
+
+    favorite: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     toJSON: { virtuals: true },
@@ -30,4 +35,5 @@ const abbreviationSchema = new mongoose.Schema(
 
 const Abbreviation = mongoose.model("Abbreviation", abbreviationSchema);
 
+exports.schema = abbreviationSchema;
 module.exports = Abbreviation;

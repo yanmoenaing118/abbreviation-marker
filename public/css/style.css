@@ -133,11 +133,12 @@ body {
     justify-content: flex-start;
     filter: drop-shadow(0, 10px, 5px black); }
     .content_box__action svg {
-      fill: #777;
       width: 1.5rem;
       height: 1.5rem; }
-      .content_box__action svg--active {
-        fill: var(--primary-color); }
+    .content_box__action--inactive {
+      fill: #aaa; }
+    .content_box__action--active {
+      fill: var(--primary-color); }
   .content_box__more {
     font-size: 1.2rem; }
 

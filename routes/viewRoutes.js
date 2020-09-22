@@ -11,5 +11,6 @@ router.get("/new", viewController.getNewPage);
 router.post("/new", abbreviationController.createAbbreviation);
 router.get("/delete/:id", abbreviationController.deleteAbbreviation);
 router.post("/update/:id", abbreviationController.updateAbbreviation);
+router.get("/add/:id", abbreviationController.addToFavoriteList);
 
 module.exports = router;

@@ -38,13 +38,16 @@
     filter: drop-shadow(0, 10px, 5px rgba(0, 0, 0, 1));
 
     svg {
-      fill: #777;
       width: 1.5rem;
       height: 1.5rem;
+    }
 
-      &--active {
-        fill: var(--primary-color);
-      }
+    &--inactive {
+      fill: #aaa;
+    }
+
+    &--active {
+      fill: var(--primary-color);
     }
   }
 

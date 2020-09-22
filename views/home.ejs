@@ -20,8 +20,10 @@
                 </svg>
             </a>
 
-            <a href="/add/<%= abbrsList[i]._id %>" class=" btn__action btn__action--fav">
-                <svg>
+            <% const active = abbrsList[i].favorite ? "content_box__action--active" :  "content_box__action--active--inactive"; %>
+
+            <a href="/add/<%= abbrsList[i]._id %>" class="btn__action btn__action--fav">
+                <svg class="<%= active %>">
                     <use xlink:href="images/sprite.svg#icon-heart"></use>
                 </svg>
             </a>

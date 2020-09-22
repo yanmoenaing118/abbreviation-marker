@@ -103,3 +103,34 @@ exports.deleteAbbreviation = async (req, res, next) => {
     });
   }
 };
+
+exports.addToFavoriteList = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    const updatedAbbr = await Abbreviation.findByIdAndUpdate(
+      req.params.id,
+      {
+        favorite: true,
+      },
+      {
+        runValidators: true,
+        new: true,
+      }
+    );
+    if (req.url.startsWith("/add")) {
+      return res.redirect("/");
+    }
+    res.status(200).json({
+      status: "success",
+      data: {
+        result: updatedAbbr,
+      },
+    });
+  } catch (error) {
+    res.status(505).json({
+      status: "fail",
+      error: error,
+      message: error.message,
+    });
+  }
+};
