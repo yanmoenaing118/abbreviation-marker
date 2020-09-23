@@ -1,18 +1,19 @@
 <%- include("header") -%>
 
-<section class="home">
-    <% for(i = 0; i < abbrsList.length ; i++) {%>
+<section class="favorites">
+    <% for(i = 0; i < favoritesList.length ; i++) {%>
     <div class="content_box">
 
         <div class="content_box__box">
-            <h2 class="content_box__title"><%= abbrsList[i].abbreviation %> (<%= abbrsList[i].stands_for %>)</h2>
+            <h2 class="content_box__title"><%= favoritesList[i].abbreviation %> (<%= favoritesList[i].stands_for %>)
+            </h2>
             <p class="content_box__text">
-                <%= abbrsList[i].description %>
+                <%= favoritesList[i].description %>
             </p>
         </div>
 
         <div class="content_box__action">
-            <% const abbr = abbrsList[i] %>
+            <% const abbr = favoritesList[i] %>
             <a href="/edit?a=<%=abbr.abbreviation%>&s=<%=abbr.stands_for%>&d=<%=abbr.description%>&id=<%=abbr._id%> "
                 class=" btn__action btn__action--update">
                 <svg class="content_box__action--inactive">
@@ -20,14 +21,14 @@
                 </svg>
             </a>
 
-            <% const active = abbrsList[i].favorite ? "content_box__action--active" :  "content_box__action--inactive"; %>
+            <% const active = favoritesList[i].favorite ? "content_box__action--active" :  "content_box__action--inactive"; %>
 
-            <a href="/add/<%= abbrsList[i]._id %>" class="btn__action btn__action--fav">
+            <a href="/add/<%= favoritesList[i]._id %>" class="btn__action btn__action--fav">
                 <svg class="<%= active %>">
                     <use xlink:href="images/sprite.svg#icon-heart"></use>
                 </svg>
             </a>
-            <a href="/delete/<%= abbrsList[i]._id %>" class="btn__action btn__action--delete">
+            <a href="/delete/<%= favoritesList[i]._id %>" class="btn__action btn__action--delete">
                 <svg class="content_box__action--inactive">
                     <use xlink:href="images/sprite.svg#icon-bin"></use>
                 </svg>
@@ -37,5 +38,4 @@
     </div>
     <% } %>
 </section>
-
 <%- include("footer") -%>

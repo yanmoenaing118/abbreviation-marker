@@ -7,6 +7,8 @@ const router = express.Router();
 router.get("/", viewController.getHome);
 router.get("/edit", viewController.getEditPage);
 router.get("/new", viewController.getNewPage);
+router.get("/favorites", viewController.getFavorites);
+router.get("/search", viewController.getSearchPage);
 
 router.post("/new", abbreviationController.createAbbreviation);
 router.get("/delete/:id", abbreviationController.deleteAbbreviation);

@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 
 const abbreviationRouter = require("./routes/abbreviationRotes");
+const searchRouter = require("./routes/searchRoutes");
 const viewRouter = require("./routes/viewRoutes");
 
 app.use(cors());
@@ -20,12 +21,10 @@ app.use(
     extended: true,
   })
 );
-app.use((req, res, next) => {
-  console.log(req.body);
-  next();
-});
+
 app.use("/", viewRouter);
 
+app.use("/api/v1/search", searchRouter);
 app.use("/api/v1/abbreviations", abbreviationRouter);
 
 module.exports = app;

@@ -2,7 +2,6 @@ const express = require("express");
 const abbreviationController = require("./../controller/abbreviationController");
 
 const router = express.Router();
-
 router
   .route("/")
   .get(abbreviationController.getAllAbbreviations)

@@ -8,11 +8,33 @@
   align-items: center;
   padding: calc(var(--pa1) + 0.5rem) 0;
   box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.3);
+  justify-content: space-around;
+
+  a {
+    // flex: 1;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
     fill: var(--color-white);
-    flex: 1;
+    // flex: 1;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: 85%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (min-width: 980px) {
+    width: 50%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

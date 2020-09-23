@@ -29,9 +29,30 @@
             </a>
             <h1>Update the Abbreviation</h1>
         </div>
+        <% } else if (page == "favorites") { %>
+        <div class="header__new">
+            <a href="/" class="btn__back">
+                <svg class="footer__icon ">
+                    <use xlink:href="images/sprite.svg#icon-arrow-right"></use>
+                </svg>
+            </a>
+            <h1>favorites Abbreviations</h1>
+        </div>
+        <% } else if (page == "search") { %>
+        <div class="header__new">
+            <a href="/" class="btn__back">
+                <svg class="footer__icon ">
+                    <use xlink:href="images/sprite.svg#icon-arrow-right"></use>
+                </svg>
+            </a>
+            <form action="/search" method="GET">
+                <input type="text" name="abbr" />
+            </form>
+        </div>
         <% } else { %>
 
         <h1 class="logo">Abbr</h1>
+
         <% } %>
     </header>
 
